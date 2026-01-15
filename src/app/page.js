@@ -1,12 +1,21 @@
+import About from "./components/home/About";
+import CTA from "./components/home/CTA";
+import Features from "./components/home/Features";
+import Hero from "./components/home/Hero";
+import PopularItems from "./components/home/PopularItems";
+import Services from "./components/home/Services";
+import Testimonials from "./components/home/Testimonials";
+
 export default function Home() {
   return (
-    <div className="p-10 text-center">
-      <h1 className="text-4xl font-bold mb-4">
-        Welcome to Next Items App
-      </h1>
-      <p className="text-gray-500">
-        This is the landing page. Sections coming next.
-      </p>
-    </div>
+    <>
+      <Hero />
+      <Features />
+      <About></About>
+      <Services></Services>
+      <PopularItems></PopularItems>
+      <Testimonials></Testimonials>
+      <CTA></CTA>
+    </>
   );
 }
