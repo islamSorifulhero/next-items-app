@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+// import { isLoggedIn, logoutUser } from "./app/utils/auth";
 import { useRouter } from "next/navigation";
 import { isLoggedIn, logoutUser } from "../utils/auth";
 
@@ -10,11 +11,15 @@ const Navbar = () => {
 
   useEffect(() => {
     setLoggedIn(isLoggedIn());
+
+    const handleLoginChange = () => setLoggedIn(isLoggedIn());
+    window.addEventListener("loginChange", handleLoginChange);
+
+    return () => window.removeEventListener("loginChange", handleLoginChange);
   }, []);
 
   const handleLogout = () => {
     logoutUser();
-    setLoggedIn(false);
     router.push("/login");
   };
 
@@ -34,16 +39,15 @@ const Navbar = () => {
           Items
         </Link>
 
-        {loggedIn && (
-          <Link href="/add-item" className="btn btn-secondary">
-            Add Item
-          </Link>
-        )}
-
         {loggedIn ? (
-          <button onClick={handleLogout} className="btn btn-error">
-            Logout
-          </button>
+          <>
+            <Link href="/add-item" className="btn btn-secondary">
+              Add Item
+            </Link>
+            <button onClick={handleLogout} className="btn btn-error">
+              Logout
+            </button>
+          </>
         ) : (
           <Link href="/login" className="btn btn-primary">
             Login
