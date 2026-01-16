@@ -40,7 +40,7 @@ const ItemsPage = () => {
           <div key={item.id} className="card bg-base-100 shadow">
             <figure>
               <img
-                className="h-40 w-full object-cover pt-4 px-4 rounded-3xl"
+                className="h-40 w-full object-cover pt-4 px-4 rounded-t-3xl"
                 src={item.image}
                 alt={item.name}
               />

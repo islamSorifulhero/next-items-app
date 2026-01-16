@@ -86,12 +86,18 @@ const FeaturesSection = () => {
                   className="h-40 w-full object-cover rounded-t-2xl"
                 />
               </figure>
-              <div className="card-body text-center">
+              <div className="card-body text-cente">
                 <h3 className="text-xl font-bold">{item.name}</h3>
                 <p className="text-base-content/70 line-clamp-2">
                   {item.description}
                 </p>
                 <p className="font-bold text-lg mt-2">${item.price}</p>
+                <Link
+                href={`/items/${item.id}`}
+                className="btn btn-primary mt-2"
+              >
+                View Details
+              </Link>
               </div>
             </div>
           ))}

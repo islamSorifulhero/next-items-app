@@ -4,22 +4,22 @@ import { motion } from "framer-motion";
 import React from "react";
 
 const CTA = () => {
-  return (
-    <section className="py-16 bg-base-200">
+    return (
+        <section className="py-16 bg-base-200">
             <div className="container mx-auto px-6">
                 {/* Section Header */}
                 <div className="text-center mb-12">
                     <div className="text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-black text-base-content uppercase tracking-tighter"
-          >
-            Frequently Asked <span className="text-primary">Questions</span>
-          </motion.h2>
-          <div className="w-20 h-1.5 bg-primary mx-auto mt-4 rounded-full"></div>
-        </div>
+                        <motion.h2
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="text-3xl md:text-5xl font-black text-base-content uppercase tracking-tighter"
+                        >
+                            Frequently Asked <span className="text-primary">Questions</span>
+                        </motion.h2>
+                        <div className="w-20 h-1.5 bg-primary mx-auto mt-4 rounded-full"></div>
+                    </div>
                     <p className="mt-3 text-base-content/70 max-w-2xl mx-auto">
                         Find quick answers to common questions about orders, delivery,
                         payments, and returns.
@@ -29,7 +29,7 @@ const CTA = () => {
                 {/* FAQ Items */}
                 <div className="space-y-4">
                     {/* FAQ 1 */}
-                    <div className="collapse collapse-arrow bg-base-200">
+                    <div className="collapse collapse-arrow bg-base-100">
                         <input type="radio" name="faq-accordion" defaultChecked />
                         <div className="collapse-title text-lg font-semibold">
                             How do I place an order?
@@ -43,7 +43,7 @@ const CTA = () => {
                     </div>
 
                     {/* FAQ 2 */}
-                    <div className="collapse collapse-arrow bg-base-200">
+                    <div className="collapse collapse-arrow bg-base-100">
                         <input type="radio" name="faq-accordion" />
                         <div className="collapse-title text-lg font-semibold">
                             What payment methods do you accept?
@@ -57,7 +57,7 @@ const CTA = () => {
                     </div>
 
                     {/* FAQ 3 */}
-                    <div className="collapse collapse-arrow bg-base-200">
+                    <div className="collapse collapse-arrow bg-base-100">
                         <input type="radio" name="faq-accordion" />
                         <div className="collapse-title text-lg font-semibold">
                             How long does delivery take?
@@ -71,7 +71,7 @@ const CTA = () => {
                     </div>
 
                     {/* FAQ 4 */}
-                    <div className="collapse collapse-arrow bg-base-200">
+                    <div className="collapse collapse-arrow bg-base-100">
                         <input type="radio" name="faq-accordion" />
                         <div className="collapse-title text-lg font-semibold">
                             Can I return or exchange a product?
@@ -86,7 +86,7 @@ const CTA = () => {
                     </div>
 
                     {/* FAQ 5 */}
-                    <div className="collapse collapse-arrow bg-base-200">
+                    <div className="collapse collapse-arrow bg-base-100">
                         <input type="radio" name="faq-accordion" />
                         <div className="collapse-title text-lg font-semibold">
                             Is my payment information secure?
@@ -101,7 +101,7 @@ const CTA = () => {
                 </div>
             </div>
         </section>
-  );
+    );
 };
 
 export default CTA;
