@@ -29,7 +29,7 @@ const ItemsPage = () => {
 
   return (
     <div className="p-10 max-w-6xl mx-auto">
-      <h1 className="text-4xl font-bold mb-8 text-center">Items List</h1>
+      <h1 className="text-4xl font-bold mt-8 mb-4 text-center">Items List</h1>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {items.length === 0 && (

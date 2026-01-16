@@ -41,7 +41,7 @@ const AddItemPage = () => {
 
   return (
     <div className="p-10 max-w-xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">Add New Item</h1>
+      <h1 className="text-3xl font-bold mt-8 mb-6">Add New Item</h1>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
