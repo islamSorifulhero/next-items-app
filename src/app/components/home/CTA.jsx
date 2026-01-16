@@ -1,16 +1,25 @@
 
 "use client";
+import { motion } from "framer-motion";
 import React from "react";
 
 const CTA = () => {
   return (
-    <section className="py-16 bg-base-100">
+    <section className="py-16 bg-base-200">
             <div className="container mx-auto px-6">
                 {/* Section Header */}
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-base-content">
-                        Frequently Asked Questions
-                    </h2>
+                    <div className="text-center mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-5xl font-black text-base-content uppercase tracking-tighter"
+          >
+            Frequently Asked <span className="text-primary">Questions</span>
+          </motion.h2>
+          <div className="w-20 h-1.5 bg-primary mx-auto mt-4 rounded-full"></div>
+        </div>
                     <p className="mt-3 text-base-content/70 max-w-2xl mx-auto">
                         Find quick answers to common questions about orders, delivery,
                         payments, and returns.

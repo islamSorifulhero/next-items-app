@@ -37,7 +37,7 @@ const stats = [
 
 const PopularItems = () => {
   return (
-    <section className="py-20 bg-base-100">
+    <section className="py-20 bg-base-200">
             <div className="container mx-auto px-6">
                 {/* Section Header */}
                 <div className="text-center mb-14">

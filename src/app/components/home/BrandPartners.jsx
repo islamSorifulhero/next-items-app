@@ -13,7 +13,7 @@ const partners = [
 
 const BrandPartners = () => {
     return (
-        <section className="py-16 bg-base-100 border-y border-base-content/20 overflow-hidden transition-colors duration-300">
+        <section className="py-16 bg-base-200 border-y border-base-content/20 overflow-hidden transition-colors duration-300">
             <div className="container mx-auto px-6 mb-10 text-center">
                 <p className="text-xs font-black uppercase tracking-[0.3em] text-base-content/50">
                     Trusted by Global Fashion Giants

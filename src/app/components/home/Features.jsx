@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 // Example: 6 featured items (you can pick from your 10 item JSON)
@@ -54,14 +55,16 @@ const FeaturesSection = () => {
         {/* Header */}
         <div className="text-center mb-14">
           <div className="text-center mb-16">
-          <motion
+
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-black text-base-content uppercase tracking-tighter"
           >
             Features <span className="text-primary">items</span>
-          </motion>
+          </motion.h1
+          >
           <div className="w-20 h-1.5 bg-primary mx-auto mt-4 rounded-full"></div>
         </div>
           <p className="mt-4 text-base-content/70 max-w-2xl mx-auto">

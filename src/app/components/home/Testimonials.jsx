@@ -41,7 +41,7 @@ const reviews = [
 
 const Testimonials = () => {
   return (
-    <section className="py-20 bg-base-100 dark:bg-base-200 transition-colors duration-300 overflow-hidden">
+    <section className="py-20 bg-base-200 dark:bg-base-200 transition-colors duration-300 overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
 
                 {/* Section Header */}
