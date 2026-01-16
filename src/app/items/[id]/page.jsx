@@ -8,7 +8,7 @@ const ItemDetailsPage = () => {
     const [error, setError] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/items/${id}`)
+        fetch(`https://backend-navy-five-38.vercel.app/api/items/${id}`)
             .then((res) => {
                 if (!res.ok) throw new Error("Item not found");
                 return res.json();
