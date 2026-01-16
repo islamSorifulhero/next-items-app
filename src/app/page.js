@@ -1,4 +1,5 @@
 import About from "./components/home/About";
+import BrandPartners from "./components/home/BrandPartners";
 import CTA from "./components/home/CTA";
 import Features from "./components/home/Features";
 import Hero from "./components/home/Hero";
@@ -15,6 +16,7 @@ export default function Home() {
       <Services></Services>
       <PopularItems></PopularItems>
       <Testimonials></Testimonials>
+      <BrandPartners></BrandPartners>
       <CTA></CTA>
     </>
   );
