@@ -13,7 +13,7 @@ const LoginPage = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    if (email === "test@example.com" && password === "123456") {
+    if (email === "soriful@islam.com" && password === "Asdfghj") {
       loginUser();
       router.push("/items");
     } else {

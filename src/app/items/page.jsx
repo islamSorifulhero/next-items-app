@@ -13,13 +13,13 @@ const ItemsPage = () => {
 
   return (
     <div className="p-10 max-w-6xl mx-auto">
-      <h1 className="text-4xl font-bold mb-8">Items List</h1>
+      <h1 className="text-4xl font-bold mb-8 text-center">Items List</h1>
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {items.map((item) => (
           <div key={item.id} className="card bg-base-100 shadow">
             <figure>
-              <img src={item.image} alt={item.name} />
+              <img className="h-40 w-full object-cover pt-4 px-4 rounded-3xl" src={item.image} alt={item.name} />
             </figure>
             <div className="card-body">
               <h2 className="card-title">{item.name}</h2>

@@ -12,7 +12,7 @@ const ItemDetailsPage = () => {
       .then((data) => setItem(data));
   }, [id]);
 
-  if (!item) return <p className="p-10">Loading...</p>;
+  if (!item) return <p className="p-10 center"><span className="loading loading-bars loading-xl"></span></p>;
 
   return (
     <div className="p-10 max-w-4xl mx-auto">
