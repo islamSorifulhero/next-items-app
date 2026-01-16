@@ -20,8 +20,6 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logoutUser();
-
-    // 🔔 LOGOUT TOAST
     toast.success("Logged out successfully!");
 
     setTimeout(() => {
@@ -29,36 +27,63 @@ const Navbar = () => {
     }, 1000);
   };
 
+  const NavLinks = () => (
+    <>
+      <Link href="/" className="btn font-bold btn-ghost w-full md:w-auto">
+        Home
+      </Link>
+      <Link href="/items" className="btn font-bold btn-ghost w-full md:w-auto">
+        Items
+      </Link>
+
+      {loggedIn ? (
+        <>
+          <Link
+            href="/add-item"
+            className="btn bg-sky-100 font-bold w-full md:w-auto"
+          >
+            Add Item
+          </Link>
+          <button
+            onClick={handleLogout}
+            className="btn font-bold btn-error w-full md:w-auto"
+          >
+            Logout
+          </button>
+        </>
+      ) : (
+        <Link href="/login" className="btn font-bold btn-primary w-full md:w-auto">
+          Login
+        </Link>
+      )}
+    </>
+  );
+
   return (
-    <div className="navbar bg-base-100 shadow-md px-6">
-      <div className="flex-1">
-        <Link href="/" className="text-xl font-bold">
+    <div className="navbar bg-base-100 shadow-md px-4 md:px-6">
+      {/* Left */}
+      <div className="navbar-start">
+        {/* Mobile Menu */}
+        <div className="dropdown">
+          <label tabIndex={0} className="btn btn-ghost md:hidden">
+            ☰
+          </label>
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <NavLinks />
+          </ul>
+        </div>
+
+        <Link href="/" className="text-xl font-bold ml-2">
           NextItems
         </Link>
       </div>
 
-      <div className="flex gap-3">
-        <Link href="/" className="btn btn-ghost">
-          Home
-        </Link>
-        <Link href="/items" className="btn btn-ghost">
-          Items
-        </Link>
-
-        {loggedIn ? (
-          <>
-            <Link href="/add-item" className="btn btn-secondary">
-              Add Item
-            </Link>
-            <button onClick={handleLogout} className="btn btn-error">
-              Logout
-            </button>
-          </>
-        ) : (
-          <Link href="/login" className="btn btn-primary">
-            Login
-          </Link>
-        )}
+      {/* Desktop Menu */}
+      <div className="navbar-end hidden md:flex gap-3">
+        <NavLinks />
       </div>
     </div>
   );
