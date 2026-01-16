@@ -3,25 +3,44 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const ItemDetailsPage = () => {
-  const { id } = useParams();
-  const [item, setItem] = useState(null);
+    const { id } = useParams();
+    const [item, setItem] = useState(null);
+    const [error, setError] = useState(false);
 
-  useEffect(() => {
-    fetch(`http://localhost:5000/api/items/${id}`)
-      .then((res) => res.json())
-      .then((data) => setItem(data));
-  }, [id]);
+    useEffect(() => {
+        fetch(`http://localhost:5000/api/items/${id}`)
+            .then((res) => {
+                if (!res.ok) throw new Error("Item not found");
+                return res.json();
+            })
+            .then((data) => setItem(data))
+            .catch(() => setError(true));
+    }, [id]);
 
-  if (!item) return <p className="p-10 center"><span className="loading loading-bars loading-xl"></span></p>;
+    if (error) {
+        return <p className="p-10 text-center text-red-500">Item not found</p>;
+    }
 
-  return (
-    <div className="p-10 max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold mb-4">{item.name}</h1>
-      <img src={item.image} alt={item.name} className="mb-4" />
-      <p className="mb-2">{item.description}</p>
-      <p className="font-bold text-xl">${item.price}</p>
-    </div>
-  );
+    if (!item) {
+        return (
+            <div className="min-h-[60vh] flex justify-center items-center">
+                <span className="loading loading-bars loading-lg"></span>
+            </div>
+        );
+    }
+
+    return (
+        <div className="p-10 max-w-4xl mx-auto">
+            <h1 className="text-4xl font-bold mb-2">{item.name}</h1>
+            <img
+                className="h-60 w-full object-cover py-4 rounded-3xl"
+                src={item.image}
+                alt={item.name}
+            />
+            <p className="mb-2 text-lg">{item.description}</p>
+            <p className="font-bold text-xl">${item.price}</p>
+        </div>
+    );
 };
 
 export default ItemDetailsPage;
