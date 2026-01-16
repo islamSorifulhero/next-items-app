@@ -41,9 +41,17 @@ const PopularItems = () => {
             <div className="container mx-auto px-6">
                 {/* Section Header */}
                 <div className="text-center mb-14">
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-base-content">
-                        Our Growth in Numbers
-                    </h2>
+                    <div className="text-center mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-5xl font-black text-base-content uppercase tracking-tighter"
+          >
+            Our Growth  <span className="text-primary">in Numbers</span>
+          </motion.h2>
+          <div className="w-20 h-1.5 bg-primary mx-auto mt-4 rounded-full"></div>
+        </div>
                     <p className="mt-4 max-w-2xl mx-auto text-base-content/70">
                         These numbers reflect our commitment to quality, customer
                         satisfaction, and continuous innovation in fashion.

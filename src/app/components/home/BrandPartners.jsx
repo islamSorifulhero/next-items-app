@@ -15,9 +15,17 @@ const BrandPartners = () => {
     return (
         <section className="py-16 bg-base-200 border-y border-base-content/20 overflow-hidden transition-colors duration-300">
             <div className="container mx-auto px-6 mb-10 text-center">
-                <p className="text-xs font-black uppercase tracking-[0.3em] text-base-content/50">
-                    Trusted by Global Fashion Giants
-                </p>
+                <div className="text-center mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-5xl font-black text-base-content uppercase tracking-tighter"
+          >
+            Trusted by Global  <span className="text-primary">Fashion Giants</span>
+          </motion.h2>
+          <div className="w-20 h-1.5 bg-primary mx-auto mt-4 rounded-full"></div>
+        </div>
             </div>
 
             {/* Infinite Scroll Container */}

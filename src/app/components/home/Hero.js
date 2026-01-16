@@ -13,7 +13,7 @@ const HeroSection = () => {
         transition={{ duration: 1 }}
         className="max-w-2xl px-6"
       >
-        <h1 className="text-5xl md:text-6xl font-extrabold text-black mb-6 drop-shadow-lg">
+        <h1 className="text-5xl md:text-6xl font-extrabold text-black mb-6 drop-shadow-lg mt-4">
           Discover Amazing Products
         </h1>
         <p className="text-lg md:text-xl text-black/80 mb-8 drop-shadow-md">
