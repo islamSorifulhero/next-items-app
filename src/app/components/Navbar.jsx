@@ -1,9 +1,9 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-// import { isLoggedIn, logoutUser } from "./app/utils/auth";
 import { useRouter } from "next/navigation";
 import { isLoggedIn, logoutUser } from "../utils/auth";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -20,7 +20,13 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logoutUser();
-    router.push("/login");
+
+    // 🔔 LOGOUT TOAST
+    toast.success("Logged out successfully!");
+
+    setTimeout(() => {
+      router.push("/login");
+    }, 1000);
   };
 
   return (

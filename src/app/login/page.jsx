@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { loginUser } from "../utils/auth";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const LoginPage = () => {
   const router = useRouter();
@@ -15,9 +16,20 @@ const LoginPage = () => {
 
     if (email === "soriful@islam.com" && password === "Asdfghj") {
       loginUser();
-      router.push("/items");
+
+      // 🔔 SUCCESS TOAST
+      toast.success("Login successful!");
+
+      setError("");
+
+      setTimeout(() => {
+        router.push("/items");
+      }, 1000);
     } else {
       setError("Invalid email or password");
+
+      // 🔔 ERROR TOAST
+      toast.error("Invalid email or password");
     }
   };
 

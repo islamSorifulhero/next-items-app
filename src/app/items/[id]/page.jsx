@@ -33,7 +33,7 @@ const ItemDetailsPage = () => {
         <div className="p-10 max-w-4xl mx-auto">
             <h1 className="text-4xl font-bold mb-2">{item.name}</h1>
             <img
-                className="h-60 w-full object-cover py-4 rounded-3xl"
+                className="h-100 w-full object-cover py-4 rounded-3xl"
                 src={item.image}
                 alt={item.name}
             />

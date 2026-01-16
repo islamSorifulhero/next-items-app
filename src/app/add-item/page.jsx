@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
 import { useProtectedRoute } from "../utils/protect";
-import toast, { Toaster } from "react-hot-toast";
+import { toast } from "react-toastify";
 
 const AddItemPage = () => {
-  useProtectedRoute(); // Protect route
+  useProtectedRoute(); // 🔐 Protect route
 
   const [loading, setLoading] = useState(false);
 
@@ -33,7 +33,7 @@ const AddItemPage = () => {
         toast.error("Failed to add item");
       }
     } catch (error) {
-      toast.error("Error: " + error.message);
+      toast.error("Something went wrong!");
     } finally {
       setLoading(false);
     }
@@ -41,8 +41,8 @@ const AddItemPage = () => {
 
   return (
     <div className="p-10 max-w-xl mx-auto">
-      <Toaster />
       <h1 className="text-3xl font-bold mb-6">Add New Item</h1>
+
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
@@ -51,12 +51,14 @@ const AddItemPage = () => {
           className="input input-bordered w-full"
           required
         />
+
         <textarea
           name="description"
           placeholder="Description"
           className="textarea textarea-bordered w-full"
           required
         ></textarea>
+
         <input
           type="number"
           name="price"
@@ -64,17 +66,20 @@ const AddItemPage = () => {
           className="input input-bordered w-full"
           required
         />
+
         <input
           type="text"
           name="image"
           placeholder="Image URL"
           className="input input-bordered w-full"
         />
+
         <button
           type="submit"
           className={`btn btn-primary w-full ${loading ? "loading" : ""}`}
+          disabled={loading}
         >
-          Add Item
+          {loading ? "Adding..." : "Add Item"}
         </button>
       </form>
     </div>

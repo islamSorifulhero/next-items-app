@@ -1,7 +1,7 @@
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { Toaster } from "react-hot-toast";
+import { ToastContainer } from "react-toastify";
 
 export const metadata = {
   title: "Next Items App",
@@ -13,7 +13,15 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="flex flex-col min-h-screen">
         <Navbar />
-        <Toaster position="top-right" reverseOrder={false} />
+        <ToastContainer
+          position="top-right"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop
+          closeOnClick
+          pauseOnHover
+          theme="light"
+        />
         <main className="flex-grow">{children}</main>
         <Footer />
       </body>
