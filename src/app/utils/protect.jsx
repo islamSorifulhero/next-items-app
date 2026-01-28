@@ -15,5 +15,5 @@ export const useProtectedRoute = () => {
     }
   }, [router]);
 
-  return loading; // Page can show loader if needed
+  return loading;
 };

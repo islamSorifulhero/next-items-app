@@ -2,7 +2,7 @@
 
 export const loginUser = () => {
   document.cookie = "isLoggedIn=true; path=/";
-  window.dispatchEvent(new Event("loginChange")); // Navbar detect
+  window.dispatchEvent(new Event("loginChange"));
 };
 
 export const logoutUser = () => {
