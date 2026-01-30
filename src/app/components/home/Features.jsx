@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-// Example: 6 featured items (you can pick from your 10 item JSON)
 const featuredItems = [
   {
     "id": 1,
@@ -56,17 +55,17 @@ const FeaturesSection = () => {
         <div className="text-center mb-14">
           <div className="text-center mb-16">
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-black text-base-content uppercase tracking-tighter"
-          >
-            Features <span className="text-primary">items</span>
-          </motion.h1
-          >
-          <div className="w-20 h-1.5 bg-primary mx-auto mt-4 rounded-full"></div>
-        </div>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-black text-base-content uppercase tracking-tighter"
+            >
+              Features <span className="text-primary">items</span>
+            </motion.h1
+            >
+            <div className="w-20 h-1.5 bg-primary mx-auto mt-4 rounded-full"></div>
+          </div>
           <p className="mt-4 text-base-content/70 max-w-2xl mx-auto">
             Check out some of our popular items. Click "All Items" to explore the full collection.
           </p>
@@ -80,24 +79,20 @@ const FeaturesSection = () => {
               className="card bg-base-100 shadow hover:shadow-lg transition-all duration-300"
             >
               <figure>
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="h-40 w-full object-cover rounded-t-2xl"
-                />
+                <img src={item.image} alt={item.name} className="h-40 w-full object-cover rounded-t-2xl" />
               </figure>
               <div className="card-body text-cente">
-                <h3 className="text-xl font-bold">{item.name}</h3>
+                <h3 className="text-xl font-bold">{item.name}</h3>4
                 <p className="text-base-content/70 line-clamp-2">
                   {item.description}
                 </p>
                 <p className="font-bold text-lg mt-2">${item.price}</p>
                 <Link
-                href={`/items/${item.id}`}
-                className="btn btn-primary mt-2"
-              >
-                View Details
-              </Link>
+                  href={`/items/${item.id}`}
+                  className="btn btn-primary mt-2"
+                >
+                  View Details
+                </Link>
               </div>
             </div>
           ))}
