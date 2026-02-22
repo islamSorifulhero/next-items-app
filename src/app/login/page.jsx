@@ -17,7 +17,6 @@ const LoginPage = () => {
     if (email === "soriful@islam.com" && password === "Asdfghj") {
       loginUser();
 
-      // 🔔 SUCCESS TOAST
       toast.success("Login successful!");
 
       setError("");
@@ -28,7 +27,6 @@ const LoginPage = () => {
     } else {
       setError("Invalid email or password");
 
-      // 🔔 ERROR TOAST
       toast.error("Invalid email or password");
     }
   };
@@ -61,6 +59,11 @@ const LoginPage = () => {
             <button className="btn btn-primary w-full">
               Login
             </button>
+
+            <div>
+              <h3 className="text-xl">Email: <span className="font-bold">soriful@islam.com</span></h3>
+              <h3 className="text-xl">Password: <span className="font-bold">Asdfghj</span></h3>
+            </div>
           </form>
         </div>
       </div>
